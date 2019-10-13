@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { setData } from './actions'
 import './App.css';
 
 
-function App() {
-  const [state, setState] = useState({ count: 0 })
+function App(state) {
 
   function handleOnClick(event) {
-    setState({
-      count: state.count + 1
-    })
+    state.setData(state.count + 1)
   }
 
   return (
@@ -19,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(state => ({ ...state }), { setData })(App);
