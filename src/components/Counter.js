@@ -6,7 +6,7 @@ export default function Counter() {
     <Consumer>
       {context => {
         return (
-          <h3>{context.count}</h3>
+          <h3>{context.data.count}</h3>
         )
       }}
     </Consumer>
